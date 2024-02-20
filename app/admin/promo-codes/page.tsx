@@ -2,11 +2,20 @@
 
 import { useEffect, useState } from "react";
 
+interface PromoCode {
+  code: string;
+  createdDate: string;
+  endDate: string;
+  usages: number;
+  discountRate: number;
+  active: boolean;
+}
+
 const PromoCodes = () => {
-  const [promoCodes, setPromoCodes] = useState([]);
+  const [promoCodes, setPromoCodes] = useState<PromoCode[]>([]);
 
   // Example data for promo codes
-  const examplePromoCodes = [
+  const examplePromoCodes: PromoCode[] = [
     {
       code: "PROMO123",
       createdDate: "2024-02-20",
