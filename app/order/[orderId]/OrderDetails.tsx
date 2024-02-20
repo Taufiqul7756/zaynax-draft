@@ -2,7 +2,6 @@
 
 import Heading from "@/app/components/Heading";
 import Status from "@/app/components/Status";
-import { formatPrice } from "@/utils/formatPrice";
 import { Order } from "@prisma/client";
 import moment from "moment";
 import { MdAccessTimeFilled, MdDeliveryDining, MdDone } from "react-icons/md";
@@ -10,6 +9,11 @@ import OrderItem from "./OrderItem";
 
 interface OrderDetailsProps {
   order: Order;
+}
+
+export function formatPrice(amount: number): string {
+  const formattedAmount = (amount / 100).toFixed(2);
+  return formattedAmount;
 }
 
 const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
