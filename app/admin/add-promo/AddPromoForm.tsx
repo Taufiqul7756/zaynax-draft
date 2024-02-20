@@ -11,15 +11,19 @@ const PromoForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState<string>(
+    new Date().toISOString().split("T")[0]
+  );
+  const [endDate, setEndDate] = useState<string>(
+    new Date().toISOString().split("T")[0]
+  );
 
   // Form submission handler
   const onSubmit = async (data: any) => {
     try {
       // Make a POST request to the API route
-      // const response = await axios.post("/api/promo", data);
-      // console.log("Response:", response.data);
+      const response = await axios.post("/api/promo", data);
+      console.log("Response:", response.data);
     } catch (error) {
       console.error("Error creating promo:", error);
     }
