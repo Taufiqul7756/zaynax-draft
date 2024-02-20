@@ -18,8 +18,8 @@ const PromoForm = () => {
   const onSubmit = async (data: any) => {
     try {
       // Make a POST request to the API route
-      const response = await axios.post("/api/promo", data);
-      console.log("Response:", response.data);
+      // const response = await axios.post("/api/promo", data);
+      // console.log("Response:", response.data);
     } catch (error) {
       console.error("Error creating promo:", error);
     }
