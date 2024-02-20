@@ -6,11 +6,18 @@ import Container from "../components/Container";
 import BarGraph from "./BarGraph";
 import getGraphData from "@/actions/getGraphData";
 import ProductCard from "../components/products/ProductCard";
+import getCurrentUser from "@/actions/getCurrentUser";
+import NullData from "../components/NullData";
 
 const Admin = async () => {
+  const currentUser = await getCurrentUser();
   const products = await getProducts({ category: null });
   const orders = await getOrders();
   const users = await getUsers();
+
+  if (!currentUser || currentUser.role !== "ADMIN") {
+    return <NullData title="Oops! Access denied. You are not an ADMIN" />;
+  }
 
   return (
     <div className="pt-8 ">
