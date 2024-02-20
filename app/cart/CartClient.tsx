@@ -66,7 +66,7 @@ const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
   return (
     <div>
       <Heading title="Shopping Cart" center />
-      <div className=" sm:grid md:flex lg:flex">
+      <div className=" sm:grid md:grid lg:flex">
         <div className="">
           <div>
             {cartProducts &&

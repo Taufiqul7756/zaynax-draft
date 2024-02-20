@@ -58,10 +58,10 @@ const ItemContent: React.FC<ItemContentProps> = ({ item }) => {
           </div>
         </Link>
         <div className="flex flex-col justify-between">
-          <Link href={`/product/${item.id}`} className="font-bold">
+          <Link href={`/product/${item.id}`} className="font-bold text-lg">
             {truncateText(item.name)}
           </Link>
-          <div className="py-5">
+          <div className="py-5 ">
             <div className="flex gap-4 font-semibold">
               <h4>Color: {item.selectedImg.color}</h4>
               <h4>Size: XL</h4>
