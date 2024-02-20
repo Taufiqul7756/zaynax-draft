@@ -68,6 +68,7 @@ To get started with the project, follow these steps:
 2. Install dependencies using `npm install`.
 3. Push data : `npx prisma db push`
 4. Run the development server using `npm run dev`.
+5. Make `.env` file by providing your own credentials.
 
 Feel free to contribute to the project by submitting pull requests or reporting issues.
 
