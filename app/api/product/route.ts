@@ -19,7 +19,6 @@ export async function POST(request: Request) {
       name,
       description,
       brand,
-      category,
       inStock,
       images,
       price: parseFloat(price),
